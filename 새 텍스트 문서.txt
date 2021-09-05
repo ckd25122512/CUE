@@ -8,4 +8,36 @@ asdf
 okay
 화이팅!
 
-이태경
+int flag =0;
+int i=0; // 0 : 끈다, 1 : 켠다
+
+void setup(){
+  pinMode(8, INPUT_PULLUP); //버튼
+  pinMode(7, OUTPUT); // LED
+}
+
+void loop()
+{
+  if (digitalRead(8) ==LOW) // 버튼이 눌려있다.
+  {
+    if(i==0)
+    {
+      digitalWrite(7,HIGH);
+    }
+    else if(i==1)
+    {
+      digitalWrite(7,LOW);
+      i=-1;
+    }
+    i+=1;
+  }
+  else{
+    if(i==0){
+      digitalWrite(7,HIGH);
+    }
+    else if(i==1){
+      digitalWrite(7,LOW);
+    }
+  }
+}
+
